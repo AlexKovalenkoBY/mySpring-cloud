@@ -49,7 +49,11 @@ services:
       - kafka
     environment:
       - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
-
+      - SPRING_DEVTOOLS_RESTART_ENABLED=true # Включаем Spring DevTools
+    volumes:
+      - ./service-a/src:/app/src # Монтируем исходный код
+      - ~/.m2:/root/.m2 # Кэш Maven для ускорения сборки
+    command: mvn spring-boot:run # Запуск через Maven для hot-reload
   api-gateway:
     build: ./api-gateway
     ports:
