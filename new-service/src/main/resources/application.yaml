@@ -1,0 +1,13 @@
+server:
+  port: 8083  # Уникальный порт
+spring:
+  application:
+    name: new-service  # Имя для Eureka
+  datasource:
+    url: jdbc:postgresql://db:5432/new_db
+    username: user
+    password: pass
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/

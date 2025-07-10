@@ -64,3 +64,10 @@ services:
       - kafka
     environment:
       - SPRING_CONFIG_IMPORT=configserver:http://config-server:8888
+  new-service:
+      build: ./new-service
+      ports:
+        - "8083:8083"
+      depends_on:
+        - eureka-server
+        - postgres  # Если использует БД

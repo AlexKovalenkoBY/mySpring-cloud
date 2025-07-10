@@ -1,0 +1,9 @@
+mySpring-cloud/
+├── api-server/          # API Gateway (Spring Cloud Gateway)
+├── config-server/       # Централизованный сервер конфигурации
+├── eureka-server/       # Сервис обнаружения (Eureka)
+├── config-repo/         # Репозиторий с конфигами (Git)
+├── user-service/        # Пример микросервиса
+├── department-service/  # Пример микросервиса
+├── docker-compose.yml   # Развёртывание всех сервисов
+└── ...
